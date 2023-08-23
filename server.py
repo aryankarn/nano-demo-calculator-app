@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
@@ -14,7 +14,8 @@ def add():
     n1 = data.get("first", 0)
     n2 = data.get("second", 0)
     result = n1 + n2
-    return result
+    response = {"result": result}
+    return jsonify(response)
 
 
 @app.route("/calculator/subtract", methods=['POST'])
@@ -23,7 +24,8 @@ def subtract():
     n1 = data.get("first", 0)
     n2 = data.get("second", 0)
     result = n1 - n2
-    return result
+    response = {"result": result}
+    return jsonify(response)
 
 
 if __name__ == '__main__':
