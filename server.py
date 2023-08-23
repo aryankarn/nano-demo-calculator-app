@@ -14,7 +14,7 @@ def add():
     n1 = data.get("first", 0)
     n2 = data.get("second", 0)
     result = n1 + n2
-    return f'result: {result}'
+    return result
 
 
 @app.route("/calculator/subtract", methods=['POST'])
@@ -23,7 +23,7 @@ def subtract():
     n1 = data.get("first", 0)
     n2 = data.get("second", 0)
     result = n1 - n2
-    return f'result: {result}'
+    return result
 
 
 if __name__ == '__main__':
